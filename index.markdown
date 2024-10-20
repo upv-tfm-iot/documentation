@@ -5,10 +5,10 @@ permalink: /
 ---
 <div class="hcontainer">
     <div class="dleft">
-        <img class="image" src="/assets/images/logo-upv.png">
+        <img class="image" src="{{ site.baseurl }}/assets/images/logo-upv.png">
     </div>
     <div class="dright">
-        <img class="image" src="/assets/images/dsiic-logo-removebg.png">
+        <img class="image" src="{{ site.baseurl }}/assets/images/dsiic-logo-removebg.png">
     </div>
 </div>
 <br>
