@@ -1,13 +1,15 @@
 
 title: Trabajo Fin de Máster
-longtitle: This is the long title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "https://upv-tfm-iot.github.io/documentation" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+longtitle: Trabajo Fin de Máster
+email: mddasil@posgrado.upv.es
+description: >- 
+  Contenedores y microservicios para IoT: 
+  Demostración de cómo el uso de tecnología de contenedores y las prácticas 
+  de microservicios pueden mejorar la gestión de dispositivos en el control 
+  del tráfico en ciudades inteligentes.
+baseurl: "/documentation"
+url: "https://upv-tfm-iot.github.io"
+domain: upv-tfm-iot.github.io
 twitter_username: marcelodedebora
 github_username:  marcelomrwin
 
@@ -43,6 +45,8 @@ permalink: /:categories/:year-:month-:day-:title:output_ext
 
 exclude:
   - _drafts
+  - README.md
+  - .gitignore
 
 collections:
   pages:
