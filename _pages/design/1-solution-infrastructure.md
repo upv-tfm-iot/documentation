@@ -4,6 +4,7 @@ author: Da Silva Sales, Marcelo Daniel
 date: 2024-10-19
 category: Jekyll
 layout: post
+mermaid: true
 ---
 ## Solution Infrastructure
 ```mermaid
