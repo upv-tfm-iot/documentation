@@ -1,0 +1,62 @@
+
+title: Trabajo Fin de Máster
+longtitle: This is the long title
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: marcelodedebora
+github_username:  marcelomrwin
+
+plugins:
+  - jekyll-feed
+  - jekyll-readme-index
+  - jemoji
+
+toc:
+  enabled: true
+
+version: 1.0
+gitbook_version: 3.2.3
+
+rss: RSS
+
+markdown: kramdown
+kramdown:
+  auto_ids: true
+  input: GFM
+  math_engine: mathjax
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  toc_levels: 1..6
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    guess_lang: true
+
+syntax_highlighter_style: colorful
+
+markdown_ext: markdown,mkdown,mkdn,mkd,md
+
+permalink: /:categories/:year-:month-:day-:title:output_ext
+
+exclude:
+  - _drafts
+
+collections:
+  pages:
+    output: true
+    permalink: /:collection/:path/
+  others:
+    output: true
+    permalink: /:collection/:path/
+
+ordered_collections:
+  - pages
+  - posts
+  - others
+
+destination: ./_site
+incremental: false
+regenerate:  true
