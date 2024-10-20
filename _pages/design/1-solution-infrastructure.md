@@ -6,7 +6,7 @@ category: Jekyll
 layout: post
 mermaid: true
 ---
-## Solution Infrastructure
+
 ```mermaid
 graph TD
     %% Color definitions
