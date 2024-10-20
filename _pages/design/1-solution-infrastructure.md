@@ -1,3 +1,10 @@
+---
+title: Solution Infrastructure
+author: Da Silva Sales, Marcelo Daniel
+date: 2024-10-19
+category: Jekyll
+layout: post
+---
 ## Solution Infrastructure
 ```mermaid
 graph TD
