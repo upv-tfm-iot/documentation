@@ -3,6 +3,9 @@
         mermaid.initialize({
             startOnLoad: false,
             theme: "default",
+            flowchart: {
+                useMaxWidth: 0,
+            },
         });
         window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
     }
