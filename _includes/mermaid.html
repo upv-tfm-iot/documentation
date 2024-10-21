@@ -8,6 +8,9 @@
             },
         });
         window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+
+        console.log('loading mermaid icons');
+        load_icons();
     }
 
     function initialize_mermaid() {
@@ -18,6 +21,49 @@
             // `DOMContentLoaded` has already fired
             render_mermaid();
         }
+    }
+
+    function load_icons(){
+        mermaid.registerIconPacks([
+        {
+            name: 'logos',
+            loader: () =>
+            fetch('https://unpkg.com/@iconify-json/logos/icons.json').then((res) => res.json()),
+        },
+        ]);
+
+        mermaid.registerIconPacks([
+        {
+            name: 'arcticons',
+            loader: () =>
+            fetch('https://unpkg.com/@iconify-json/arcticons@1.2.4/icons.json').then((res) => res.json()),
+        },
+        ]);
+
+        mermaid.registerIconPacks([
+        {
+            name: 'devicon',
+            loader: () =>
+            fetch('https://unpkg.com/@iconify-json/devicon@1.2.4/icons.json').then((res) => res.json()),
+        },
+        ]);
+
+        mermaid.registerIconPacks([
+        {
+            name: 'carbon',
+            loader: () =>
+            fetch('https://unpkg.com/@iconify-json/carbon@1.2.3/icons.json').then((res) => res.json()),
+        },
+        ]);
+
+        mermaid.registerIconPacks([
+        {
+            name: 'simple-icons',
+            loader: () =>
+            fetch('https://unpkg.com/@iconify-json/simple-icons@1.2.9/icons.json').then((res) => res.json()),
+        },
+        ]);
+
     }
 
     if (window.mermaid_script && window.mermaid) {
