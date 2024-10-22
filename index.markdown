@@ -33,7 +33,7 @@ permalink: /
 
     <div class="dfooter">
         <p><b>AUTOR/A:</b> Da Silva Sales, Marcelo Daniel</p>
-        <p><b>Tutor/a:</b> Fons Cors, Joan Josep</p>
+        <p><b>Tutor/a:</b> ????????????</p>
         <p><b>CURSO ACADÉMICO:</b> 2023/2024</p>
     </div>
 </div>
