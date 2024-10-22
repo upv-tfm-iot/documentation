@@ -18,3 +18,19 @@ Como estudio de caso, se configuraron dos dispositivos Raspberry Pi para simular
 
 
 <b>Palabras clave:</b>  IoT, ciudades inteligentes, gestión de tráfico urbano, Raspberry Pi, Zero Touch, automatización, microservicios, Kubernetes, Ansible, Quarkus, panel de control remoto, actualización automatizada, arquitectura de contenedores, alta disponibilidad, dispositivos de tráfico
+
+---
+
+# Abstract
+
+This work presents the prototyping of a solution for the management of IoT devices applied to traffic control in smart cities. The increasing number of IoT devices distributed in urban environments imposes significant challenges for the management and updating of these devices. The proposal presented here seeks to explore the use of accessible devices such as the Raspberry Pi, which, due to their computational capacity and low cost, allow the implementation of robust solutions for the automated management of traffic devices.
+
+The project starts from a minimal configuration of a Raspberry Pi, which has only one agent installed. Through techniques such as Zero Touch, a set of automated tasks is responsible for installing and configuring the software necessary for the operation of these devices. For remote management, a control panel was implemented that allows both the sending of commands and the real-time monitoring of the status of the devices.
+
+The solution adopts a microservices-based architecture, allowing significant benefits in efficiency and scalability. Services are faster to start and stop, providing agile responses to changes in the environment. Furthermore, the specialized nature of microservices allows each device to consume less power, as only the necessary components are activated. Another benefit is the ability to run a larger number of specialized services on the devices, maximizing the use of limited computational resources. This modular approach also makes it easier to maintain and update the systems, allowing for software changes with minimal disruption to device operations, which is crucial in urban traffic environments where high availability is essential.
+
+Tools such as Ansible were used for the initial configuration of the devices, preparing them for automatic and secure self-configuration. In addition, a virtualized environment was created supporting a Kubernetes installation, responsible for managing all the dashboard components, ensuring centralized and efficient administration.
+
+As a case study, two Raspberry Pi devices were configured to simulate a traffic light and a speed dashboard. Through the proposed solution, it is demonstrated how the software on these devices can be remotely updated with almost zero downtime and without the need for direct human intervention. This approach offers an efficient and scalable solution for managing IoT devices in urban environments, ensuring high availability and flexibility for future expansion.
+
+<b>Keywords:</b> IoT, smart cities, urban traffic management, Raspberry Pi, Zero Touch, automation, microservices, Kubernetes, Ansible, Quarkus, remote control panel, automated update, container architecture, high availability, traffic devices
