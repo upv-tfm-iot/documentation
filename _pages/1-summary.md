@@ -1,10 +1,12 @@
 ---
-title: Resumen
+title: Resumen and Abstract
 author: Da Silva Sales, Marcelo Daniel
 date: 2024-10-19
 category: Jekyll
 layout: post
 ---
+
+# Resumen
 
 Este trabajo presenta la prototipación de una solución para la gestión de dispositivos IoT aplicados al control de tráfico en ciudades inteligentes. La creciente cantidad de dispositivos IoT distribuidos en entornos urbanos impone desafíos significativos para la administración y actualización de estos equipos. La propuesta aquí presentada busca explorar el uso de dispositivos accesibles como el Raspberry Pi, que, debido a su capacidad computacional y bajo costo, permiten la implementación de soluciones robustas para la gestión automatizada de dispositivos de tráfico.
 
