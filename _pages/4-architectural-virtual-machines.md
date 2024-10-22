@@ -61,5 +61,5 @@ architecture-beta
 
 ### Geographical Distribution
 
-![Geo Dist](../../../assets/images/geo-dist.png)
+![Geo Dist](../../assets/images/geo-dist.png)
 
