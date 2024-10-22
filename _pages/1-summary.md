@@ -15,3 +15,6 @@ La solución adopta una arquitectura basada en microservicios, lo que permite be
 Se utilizaron herramientas como Ansible para la configuración inicial de los dispositivos, preparándolos para una autoconfiguración automática y segura. Además, se creó un entorno virtualizado que soporta una instalación de Kubernetes, responsable de gestionar todos los componentes del panel de control, garantizando una administración centralizada y eficiente.
 
 Como estudio de caso, se configuraron dos dispositivos Raspberry Pi para simular un semáforo y un panel de velocidad. A través de la solución propuesta, se demuestra cómo el software en estos dispositivos puede actualizarse de forma remota con un tiempo de inactividad casi nulo y sin la necesidad de intervención humana directa. Este enfoque ofrece una solución eficiente y escalable para la gestión de dispositivos IoT en entornos urbanos, garantizando alta disponibilidad y flexibilidad para futuras expansiones.
+
+
+<b>Palabras clave:</b>  IoT, ciudades inteligentes, gestión de tráfico urbano, Raspberry Pi, Zero Touch, automatización, microservicios, Kubernetes, Ansible, Quarkus, panel de control remoto, actualización automatizada, arquitectura de contenedores, alta disponibilidad, dispositivos de tráfico
