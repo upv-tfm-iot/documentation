@@ -1,5 +1,5 @@
 ---
-title: Architectural Diagram
+title: Device Creation
 subtitle: Subtitle
 author: Da Silva Sales, Marcelo Daniel
 date: 2024-10-19
