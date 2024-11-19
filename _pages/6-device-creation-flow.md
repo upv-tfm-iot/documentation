@@ -47,3 +47,32 @@ sequenceDiagram
     Device-->>AnsibleController: Confirmation: Configuration Completed
     AnsibleController-->>Technician: Playbook Execution Completed
 ```
+
+### Linux Service Startup Sequence with Container Runtime
+```mermaid
+sequenceDiagram
+    title Device Startup Sequence
+
+    participant System as Device Linux OS
+    participant Init as System Init
+    participant ContainerRuntime as Container Runtime (Podman)
+    participant Service as Daemon Service
+    participant MQTT as HUB MQTT
+
+    System->>Init: Boot Up
+    Init->>ContainerRuntime: Start Container Runtime
+    ContainerRuntime-->>Init: Container Runtime Started
+    Init->>ContainerRuntime: Start Daemon Service as Container
+    ContainerRuntime->>ContainerRuntime: podman pull latest image
+    ContainerRuntime-->>ContainerRuntime: Image Pulled
+    ContainerRuntime->>ContainerRuntime: Start Container
+    ContainerRuntime->>Service: Initialize Service
+    Service-->>ContainerRuntime: Service Initialized
+    Service->>Service: Load Configurations
+    Service->>Service: Perform Initialization Tasks
+    Service->>MQTT: Publish Live Message
+    Note right of Service: The message contains the device environment variables.
+    Service-->>MQTT: Subscribe to Command Queue
+    MQTT-->>Service: Subscribed to Command Queue
+    Service->>Service: Start listen Commands Messages
+```
