@@ -10,6 +10,23 @@ mermaid: true
 
 ## Device creation Process
 
+### Execution process
+```mermaid
+sequenceDiagram
+    actor Technician as Technician (Laptop or Mobile)
+    participant AnsibleController as Ansible Controller
+    participant Device as Target Device
+    Note over Technician: Pre-requisites:<br/>1. The device OS must have the AnsibleController public key<br/>2. Technician's devices and target device must be on the same network<br/>3. Technician must know the target device's IP address<br/>4. AnsibleController must be on the same network as the Technician's devices and the target device
+    Note over AnsibleController: The AnsibleController is a centralized service<br/>that stores automation playbooks and<br/>maintains access keys to securely execute<br/>configuration playbooks on target devices.
+    Technician->>+AnsibleController: Verify Device Connectivity
+    AnsibleController->>+Device: Ping Device to Ensure Connectivity
+    Device-->>AnsibleController: Response: Device Reachable
+    Technician->>+AnsibleController: Execute Playbook to Configure Device
+    AnsibleController->>+Device: Execute Install and configure agent flow
+    Device-->>AnsibleController: Confirmation: Configuration Completed
+    AnsibleController-->>Technician: Playbook Execution Completed
+```
+
 ### Install and configure agent flow
 ```mermaid
 flowchart LR
@@ -29,23 +46,6 @@ flowchart LR
     end
     C --> EnvVariablesConfig
     EnvVariablesConfig --> D[Agent Configured as Daemon Service]
-```
-
-### Execution process
-```mermaid
-sequenceDiagram
-    actor Technician as Technician (Laptop or Mobile)
-    participant AnsibleController as Ansible Controller
-    participant Device as Target Device
-    Note over Technician: Pre-requisites:<br/>1. The device OS must have the AnsibleController public key<br/>2. Technician's devices and target device must be on the same network<br/>3. Technician must know the target device's IP address<br/>4. AnsibleController must be on the same network as the Technician's devices and the target device
-    Note over AnsibleController: The AnsibleController is a centralized service<br/>that stores automation playbooks and<br/>maintains access keys to securely execute<br/>configuration playbooks on target devices.
-    Technician->>+AnsibleController: Verify Device Connectivity
-    AnsibleController->>+Device: Ping Device to Ensure Connectivity
-    Device-->>AnsibleController: Response: Device Reachable
-    Technician->>+AnsibleController: Execute Playbook to Configure Device
-    AnsibleController->>+Device: Execute Install and configure agent flow
-    Device-->>AnsibleController: Confirmation: Configuration Completed
-    AnsibleController-->>Technician: Playbook Execution Completed
 ```
 
 ### Linux Service Startup Sequence with Container Runtime
