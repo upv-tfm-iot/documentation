@@ -17,7 +17,7 @@ flowchart TD
     %% Device existence check
     DeviceExists -- Yes --> ValidateConfigurations@{ shape: subproc, label: "Validate Device Configurations"}
     DeviceExists -- No --> CreateDevice@{ shape: subproc, label: "Create Device in Control Plane"}
-    CreateDevice --> End@{ shape: dbl-circ, label: "End" }
+    CreateDevice --> DefaultApplication{ Is there a default application for the device type? }
     CreateDevice --- NoteCreate
 
     %% Validation configurations path
@@ -31,12 +31,16 @@ flowchart TD
     %% Control Plane Missing Values Path
     ValidateConfigurations --> MissingValues{Control Plane Missing Values?}
     MissingValues -- Yes --> PersistConfig[Persist Missing Configurations in Control Plane]
-    PersistConfig --> End
+    PersistConfig --> End@{ shape: dbl-circ, label: "End" }
     MissingValues -- No --> End
     PersistConfig --- NotePersist
 
+    %% check if there is any application marked as default for the device type
+    DefaultApplication -- Yes --> DeployCommand@{ shape: subproc, label: "Send DeployCommand to the Device"}
+    DefaultApplication -- No --> End
+
     %% Check if the device has an application associated with it
-    DeviceHasApplication -- Yes --> DeployCommand@{ shape: subproc, label: "Send DeployCommand to the Device"}
+    DeviceHasApplication -- Yes --> DeployCommand
     DeviceHasApplication -- No --> End
     DeployCommand --> End
 
