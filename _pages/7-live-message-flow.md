@@ -22,9 +22,9 @@ flowchart TD
 
     %% Validation configurations path
     ValidateConfigurations --> ConfigurationsMatch{Configurations Match?}
-    ConfigurationsMatch -- Yes --> End
+    ConfigurationsMatch -- Yes --> DeviceHasApplication{Device has application?}
     ConfigurationsMatch -- No --> UpdateCommand@{ shape: subproc, label: "Send UpdateConfigCommand to Device"}
-    UpdateCommand --> End
+    UpdateCommand --> DeviceHasApplication
     ValidateConfigurations --- NoteValidate
     UpdateCommand --- NoteUpdate
 
@@ -34,7 +34,12 @@ flowchart TD
     PersistConfig --> End
     MissingValues -- No --> End
     PersistConfig --- NotePersist
-    
+
+    %% Check if the device has an application associated with it
+    DeviceHasApplication -- Yes --> DeployCommand@{ shape: subproc, label: "Send DeployCommand to the Device"}
+    DeviceHasApplication -- No --> End
+    DeployCommand --> End
+
     NoteReceive@{ shape: braces, label: "The Live Message contains device state,<br/>including environment variables" }
     NoteCreate@{ shape: braces, label: "When a device does not exist in control plane:<br/>- the device is created with the information provided by the message"}
     NoteValidate@{ shape: braces, label: "Validation Steps:<br/>1. Compare device configurations sent in the Live Message<br/>with control plane records.<br/>2. Identify discrepancies or missing values" }
