@@ -8,7 +8,7 @@ layout: post
 mermaid: true
 ---
 
-## Device creation Process
+## Device initialization Process
 
 ### Execution process
 ```mermaid
@@ -70,6 +70,28 @@ sequenceDiagram
     Service-->>ContainerRuntime: Service Initialized
     Service->>Service: Load Configurations
     Service->>Service: Perform Initialization Tasks
+    Service->>MQTT: Publish Live Message
+    Note right of Service: The message contains the device environment variables.
+    Service-->>MQTT: Subscribe to Command Queue
+    MQTT-->>Service: Subscribed to Command Queue
+    Service->>Service: Start listen Commands Messages
+```
+
+### Daemon Service Start sequence
+```mermaid
+sequenceDiagram
+    title Service Startup Sequence
+
+    participant Service as Daemon Service
+    participant ContainerRuntime as Container Runtime (Podman)
+    participant MQTT as HUB MQTT
+
+    Service->>ContainerRuntime: Start Daemon Container Service    
+    ContainerRuntime->>ContainerRuntime: podman pull latest image
+    ContainerRuntime-->>ContainerRuntime: Image Pulled
+    ContainerRuntime->>ContainerRuntime: Start Container
+    ContainerRuntime->>ContainerRuntime: Load Configurations
+    ContainerRuntime-->>Service: Service Initialized    
     Service->>MQTT: Publish Live Message
     Note right of Service: The message contains the device environment variables.
     Service-->>MQTT: Subscribe to Command Queue
