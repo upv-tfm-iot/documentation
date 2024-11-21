@@ -8,8 +8,6 @@ layout: post
 mermaid: true
 ---
 
-## Live message flow
-
 ```mermaid
 flowchart TD
     ReceiveMessage@{ shape: circle, label: "📩 <br/>Receive Live Message" }
