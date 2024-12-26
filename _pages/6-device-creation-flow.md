@@ -93,7 +93,7 @@ sequenceDiagram
     ContainerRuntime->>ContainerRuntime: Load Configurations
     ContainerRuntime-->>Service: Service Initialized    
     Service->>MQTT: Publish Live Message
-    Note right of Service: The message contains the device environment variables.
+    Note right of Service: The message contains the device environment variables.    
     Service-->>MQTT: Subscribe to Command Queue
     MQTT-->>Service: Subscribed to Command Queue
     Service->>Service: Start listen Commands Messages

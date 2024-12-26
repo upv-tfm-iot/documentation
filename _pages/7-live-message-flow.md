@@ -8,6 +8,10 @@ layout: post
 mermaid: true
 ---
 
+<p>
+This flow is executed by the control plane
+</p>
+
 ```mermaid
 flowchart TD
     ReceiveMessage@{ shape: circle, label: "📩 <br/>Receive Live Message" }
@@ -53,4 +57,32 @@ flowchart TD
     DeployCommand --> End
 
     %% Check if the device has all needed information to deploy an application
+```
+
+<p class="title-no-mark">Live Message Example</p>
+
+```json
+{
+  "start_date": "2024-12-10T22:51:55.34053+01:00",
+  "device_config": {
+    "device_id": "traffic-light-001",
+    "device_address": "192.168.1.10",
+    "device_type": "TRAFFIC_LIGHT",
+    "device_road": "",
+    "device_road_segment": "",
+    "hub": false,
+    "latitude": 0,
+    "longitude": 0,
+    "raspberry": false,
+    "supported": false,
+    "zone": "A",
+    "hub_host": "192.168.1.20",
+    "hub_port": 8883,
+    "hub_user": "admin",
+    "hub_pass": "password",
+    "hub_live_topic": "HUB_COMMAND/DEVICE_LIVE_TOPIC",
+    "hub_command_in_topic": "ZONE/A/HUB_COMMAND/CMD_IN/TRAFFIC-LIGHT-001",
+    "hub_command_out_topic": "HUB_COMMAND/CMD_OUT/TRAFFIC-LIGHT-001"
+  }
+}
 ```
